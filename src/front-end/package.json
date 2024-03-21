@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
     "@solana/web3.js": "^1.91.1",
     "cookie-parser": "^1.4.6",
     "expo": "~50.0.13",

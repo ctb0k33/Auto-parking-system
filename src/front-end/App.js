@@ -1,13 +1,19 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+
 import ParkingDetail from "./screens/parking_detail/ParkingDetail";
-import { styles } from "./App.style";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 import ConnectWallet from "./screens/connect_wallet/ConnectWallet";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-        <ConnectWallet />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ConnectWallet">
+        <Stack.Screen name="ConnectWallet" component={ConnectWallet} />
+        <Stack.Screen name="ParkingDetail" component={ParkingDetail} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
