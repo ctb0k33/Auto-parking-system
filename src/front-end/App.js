@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import ParkingDetail from "./screens/parking_detail/ParkingDetail";
+import Qr from "./screens/qr/Qr";
 import { styles } from "./App.style";
 import ConnectWallet from "./screens/connect_wallet/ConnectWallet";
 export default function App() {
@@ -8,9 +8,22 @@ export default function App() {
     <View style={styles.container}>
         <ConnectWallet />
     </View>
+// export default function App() {
+//   return (
+//     <View style={styles.container}>
+//       <ParkingDetail />
+//     </View>
   );
 }
 
+// export default function App() {
+//   return (
+//     <SafeAreaView>
+//       <Qr />
+//     </SafeAreaView>
+
+//   );
+// }
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
