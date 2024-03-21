@@ -170,6 +170,7 @@ export default function ConnectWallet() {
             </View>
           )}
         </View>
+        <Button title="Connect Addedit" onPress={()=>navigation.navigate("ParkingList")} />
       </SafeAreaView>
     </SafeAreaProvider>
   );
