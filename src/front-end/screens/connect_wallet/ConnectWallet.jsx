@@ -19,6 +19,8 @@ import { decryptPayload } from "../../utils/decryptPayload";
 import { encryptPayload } from "../../utils/encryptPayload";
 import { styles } from "./ConnectWallet.style";
 import { useNavigation } from "@react-navigation/native";
+import axiosInstance from "../../utils/axios";
+import { GET_API } from "../../api";
 global.Buffer = global.Buffer || Buffer;
 
 const onConnectRedirectLink = Linking.createURL("onConnect");
@@ -35,7 +37,13 @@ export default function ConnectWallet() {
   const [balance, setBalance] = useState(0);
 
   const navigation = useNavigation();
-
+  const testAPI = async () => {
+    const response = await axiosInstance.get(GET_API().testGet);
+    console.log(response.data);
+  };
+  useEffect(() => {
+    testAPI();
+  }, []);
   useEffect(() => {
     const initializeDeeplinks = async () => {
       const initialUrl = await Linking.getInitialURL();
