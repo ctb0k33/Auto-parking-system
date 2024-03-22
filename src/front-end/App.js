@@ -6,6 +6,7 @@ import ConnectWallet from "./screens/connect_wallet/ConnectWallet";
 import ParkingList from "./screens/ParkingList";
 import AddEditParking from "./screens/AddEditParking";
 import Qr from "./screens/qr/Qr";
+import AllParking from "./screens/user_parking/AllParking";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
         <Stack.Screen name="ParkingList" component={ParkingList} />
         <Stack.Screen name="AddEditParking" component={AddEditParking} />
         <Stack.Screen name="Qr" component={Qr} />
+        <Stack.Screen name="AllParking" component={AllParking} />
       </Stack.Navigator>
     </NavigationContainer>
   );
