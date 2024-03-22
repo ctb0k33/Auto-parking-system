@@ -43,6 +43,25 @@ app.post("/createQr", async (req, res) => {
   }
 });
 
+app.post("/createAcccount", async (req, res) => {
+  try {
+    const { publickey } = req.body;
+    await UserModel.create({
+      publickey,
+    });
+    qr = qrcode.toDataURL(JSON.stringify(publickey), (err, url) => {
+      if (err) {
+        console.error("Error generating QR code", err);
+        return res.status(500).send("Error generating QR code");
+      }
+      res.status(200).json({ qrCode: url });
+    });
+  } catch (error) {
+    console.error("Error in /createAccount route", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 app.delete("/deleteQr/:carNumber", async (req, res) => {
   try {
     const { carNumber } = req.params;
@@ -53,6 +72,7 @@ app.delete("/deleteQr/:carNumber", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 app.get("/parking", async (req, res) => {
   try {
     const parking = await ParkingModel.find();
@@ -74,6 +94,7 @@ app.get("/parking/:id", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 app.get("parkingOwner/:id", async (req, res) => {
   try {
     const parkingOwner = await UserModel.find({
