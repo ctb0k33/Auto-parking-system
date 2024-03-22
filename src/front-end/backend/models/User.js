@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 import { v4 as uuidv4 } from "uuid";
-import AutoIncrementFactory from "mongoose-sequence";
-const AutoIncrement = AutoIncrementFactory(mongoose);
 const userSchema = new mongoose.Schema(
   {
     publickey: String,
@@ -24,5 +22,4 @@ const userSchema = new mongoose.Schema(
     collection: "user",
   }
 );
-// userSchema.plugin(AutoIncrement, { int_field: "_id" });
 export default mongoose.model("user", userSchema);

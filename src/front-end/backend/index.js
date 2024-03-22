@@ -53,13 +53,35 @@ app.delete("/deleteQr/:carNumber", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 app.get("/parking", async (req, res) => {
   try {
     const parking = await ParkingModel.find();
     res.status(200).json(parking);
   } catch (error) {
     console.error("Error in /parking route", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/parking/:id", async (req, res) => {
+  try {
+    const parkingRegistered = await UserModel.find({
+      _id: req.params.id,
+    }).populate("registerPark");
+    res.status(200).json(parkingRegistered);
+  } catch (error) {
+    console.error("Error in /parking route", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("parkingOwner/:id", async (req, res) => {
+  try {
+    const parkingOwner = await UserModel.find({
+      _id: req.params.id,
+    }).populate("packingOwner");
+    res.status(200).json(parkingOwner);
+  } catch (error) {
+    console.error("Error in /parkingOwner route", error);
     res.status(500).send("Internal Server Error");
   }
 });
