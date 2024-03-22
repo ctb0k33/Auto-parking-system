@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { View, Text, Button, Alert, Pressable } from "react-native";
+import { View, Text, Button, Alert, Pressable, TextInput } from "react-native";
 import { Modal } from "../../common/Modal";
 import { styles } from "./parkingRegister.style";
+import { set } from "mongoose";
 
 // function onPressLearnMore() {
 //   Alert.alert(
@@ -24,6 +25,7 @@ import { styles } from "./parkingRegister.style";
 
 export default function ParkingRegister({ contractId }) {
   const [modalState, setModalState] = useState(false);
+  const [fund, setFund] = useState(0);
   return (
     <View style={styles.container}>
       <Text style={styles.contract}>Parking Register</Text>
@@ -32,14 +34,29 @@ export default function ParkingRegister({ contractId }) {
         <Text>{contractId}</Text>
       </View>
       <Button
-        onPress={()=>{setModalState(true)}}
+        onPress={() => {
+          setModalState(true);
+        }}
         title="Register"
         color="green"
         accessibilityLabel="Learn more about this purple button"
       />
       <Modal isOpen={modalState}>
         <View style={styles.modal}>
-          <Text>This is my modal</Text>
+          <Text>Register</Text>
+          <Text>
+            Contract Id: <Text>{contractId}</Text>
+          </Text>
+          <Text>
+            Add fund:
+          </Text>
+          <TextInput
+              style={{ height: 40, borderColor: "red", borderWidth: 3 }}
+              onChangeText={setFund}
+              value={fund}
+              placeholder="Enter text here..."
+              keyboardType="numeric"
+            />
           <Pressable onPress={() => setModalState(false)}>
             <Text>Close</Text>
           </Pressable>

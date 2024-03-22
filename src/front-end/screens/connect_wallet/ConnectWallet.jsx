@@ -41,9 +41,9 @@ export default function ConnectWallet() {
     const response = await axiosInstance.get(GET_API().testGet);
     console.log(response.data);
   };
-  useEffect(() => {
-    testAPI();
-  }, []);
+  // useEffect(() => {
+  //   testAPI();
+  // }, []);
   useEffect(() => {
     const initializeDeeplinks = async () => {
       const initialUrl = await Linking.getInitialURL();
@@ -170,8 +170,14 @@ export default function ConnectWallet() {
             </View>
           )}
         </View>
-        <Button title="Connect Addedit" onPress={()=>navigation.navigate("ParkingList")} />
-        <Button title="Connect Parking Detail" onPress={()=>navigation.navigate("ParkingDetail")} />
+        <Button
+          title="Connect Addedit"
+          onPress={() => navigation.navigate("ParkingList")}
+        />
+        <Button
+          title="Connect Parking Detail"
+          onPress={() => navigation.navigate("ParkingDetail")}
+        />
       </SafeAreaView>
     </SafeAreaProvider>
   );
