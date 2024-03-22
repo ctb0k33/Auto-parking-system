@@ -9,12 +9,10 @@ const userSchema = new mongoose.Schema(
     registerPark: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Parking",
-      required: true,
     },
-    packingOwner: {
+    parkingOwner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Parking",
-      required: true,
     },
   },
   {
