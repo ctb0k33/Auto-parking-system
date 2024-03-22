@@ -43,22 +43,33 @@ export default function ParkingRegister({ contractId }) {
       />
       <Modal isOpen={modalState}>
         <View style={styles.modal}>
-          <Text>Register</Text>
+          <Text style={styles.modalTitle}>Register</Text>
           <Text>
             Contract Id: <Text>{contractId}</Text>
           </Text>
-          <Text>
-            Add fund:
-          </Text>
-          <TextInput
-              style={{ height: 40, borderColor: "red", borderWidth: 3 }}
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text>Add fund:</Text>
+            <TextInput
+              style={styles.textInput}
               onChangeText={setFund}
               value={fund}
-              placeholder="Enter text here..."
               keyboardType="numeric"
             />
+             <Text style={styles.unit}>SOL</Text>
+          </View>
+
           <Pressable onPress={() => setModalState(false)}>
             <Text>Close</Text>
+          </Pressable>
+          <Pressable onPress={() => setModalState(false)}>
+            <Text>Confirm</Text>
           </Pressable>
         </View>
       </Modal>

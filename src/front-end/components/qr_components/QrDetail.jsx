@@ -6,14 +6,15 @@ import { styles } from "./Qr_detail.style";
 
 
 export default function QrDetail() {
-  const [qrImage, setQrImage] = useState(require('../../data/qr1.png')); 
+  const fakeQR = require('../../assets/images/qr1.png');
+  const [qrImage, setQrImage] = useState(fakeQR); 
 
   const handlePressQrInitial = () => {
-    setQrImage(require('../../data/qr1.png'));
+    setQrImage(fakeQR);
   };
 
   const handlePressQrOneTime = () => {
-    setQrImage(require('../../data/qr2.png')); 
+    setQrImage(fakeQR); 
   };
 
   return (

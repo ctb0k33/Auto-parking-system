@@ -178,6 +178,10 @@ export default function ConnectWallet() {
           title="Connect Parking Detail"
           onPress={() => navigation.navigate("ParkingDetail")}
         />
+        <Button
+          title="Connect QR Screen"
+          onPress={() => navigation.navigate("Qr")}
+        />
       </SafeAreaView>
     </SafeAreaProvider>
   );
