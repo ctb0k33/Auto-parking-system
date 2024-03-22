@@ -1,18 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Qr from "./screens/qr/Qr";
-import { styles } from "./App.style";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import ParkingDetail from "./screens/parking_detail/ParkingDetail";
 import ConnectWallet from "./screens/connect_wallet/ConnectWallet";
+import ParkingList from "./screens/ParkingList";
+import AddEditParking from "./screens/AddEditParking";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-        <ConnectWallet />
-    </View>
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <ParkingDetail />
-//     </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ConnectWallet">
+        <Stack.Screen name="ConnectWallet" component={ConnectWallet} />
+        <Stack.Screen name="ParkingDetail" component={ParkingDetail} />
+        <Stack.Screen name="ParkingList" component={ParkingList} />
+        <Stack.Screen name="AddEditParking" component={AddEditParking} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

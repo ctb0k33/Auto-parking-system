@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    height: 250,
+    // height: 250,
   },
   mainImage: {
     width: width,

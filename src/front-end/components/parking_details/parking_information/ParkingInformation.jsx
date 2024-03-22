@@ -1,7 +1,5 @@
 import { Image, View, Text, Linking } from "react-native";
 import { styles } from "./parkingInformation.style";
-import { SafeAreaView } from "react-native-safe-area-context";
-
 export default function ParkingInformation({
   rating,
   address,
@@ -23,7 +21,6 @@ export default function ParkingInformation({
   };
 
   return (
-    <SafeAreaView>
       <View style={styles.container}>
         <View style={styles.rating}>
           <View style={{ display: "flex", flexDirection: "row" }}>
@@ -62,6 +59,5 @@ export default function ParkingInformation({
           </View>
         </View>
       </View>
-    </SafeAreaView>
   );
 }

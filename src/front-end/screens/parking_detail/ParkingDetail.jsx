@@ -12,7 +12,7 @@ import ParkingRegister from "../../components/parking_details/parking_register/P
 export default function ParkingDetail() {
   const fakeData = parkingList[0];
   return (
-    <SafeAreaView>
+    // <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
           <ParkingDetailImage name={fakeData.name} />
@@ -33,6 +33,6 @@ export default function ParkingDetail() {
           <ParkingRegister contractId="6yiDKPDbqWLGAEBkDvVg6UNrKsLsPVkLbA1TJo4KCdzP" />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    // </SafeAreaView>
   );
 }
