@@ -1,6 +1,7 @@
 const GET_API = () => {
   return {
-    testGet:"/breeds/image/random"
+    testGet:"/breeds/image/random",
+    getAllParking:"/parking"
   };
 };
 

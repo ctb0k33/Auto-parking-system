@@ -30,6 +30,7 @@ export default function ParkingAbout({
                   borderRadius: 15,
                   alignItems: "center",
                 }}
+                key={index}
               >
                 <Image source={likeIcon} style={styles.likeIcon} />
                 <Text style={{ color: "#37592f", fontWeight: "bold" }}>

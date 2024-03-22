@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet,Dimensions } from "react-native";
 
+const width = Dimensions.get("window").width;
 export const styles = StyleSheet.create({
   container: {
     display: "flex",
@@ -20,4 +21,10 @@ export const styles = StyleSheet.create({
   contract: {
     fontWeight: "bold",
   },
+  modal:{
+    backgroundColor: "white",
+    width:width*0.9,
+    padding:4,
+    borderRadius:10,
+  }
 });
