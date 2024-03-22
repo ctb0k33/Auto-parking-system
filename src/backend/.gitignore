@@ -35,3 +35,6 @@ yarn-error.*
 *.tsbuildinfo
 ./backend/.env
 backend/.env
+
+# env
+.env
