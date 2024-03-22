@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
 const config = {
-    db: {
-      url: 'localhost:27017',
-      name: 'parkingdb'
-    }
-  }
-  
-  export default config
+  db: {
+    url: process.env.MONGODB_URL,
+    name: "parkingdb",
+  },
+};
+console.log(config);
+export default config;
